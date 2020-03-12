@@ -3,6 +3,10 @@ document.write("Creat your table");
 let form = document.createElement('form');
 document.body.append(form);
 
+let header = document.createElement("p");
+header.appendChild(document.createTextNode("Create your table"));
+form.appendChild(header);
+
 let rowsName = document.createElement('span');
 rowsName.appendChild(document.createTextNode('Row:'));
 rowsName.style.margin = "5px";
@@ -33,6 +37,7 @@ form.appendChild(button);
 
 button.onclick = () => {
 	form.style.display = 'none';
+	
 	let table = document.createElement('table');
 	table.border = "2";
 	table.style.borderCollapse = "collapse";
@@ -76,7 +81,15 @@ function createDiv() {
 	document.body.append(divWapper);
 }
 
+	
+
 function createDivTask5() {
+
+	let headtable = document.createElement("h");
+	headtable.style.fontWeight = "bold";
+	headtable.style.textTransform = "uppercase";
+	document.body.insertBefore(headtable, document.body.firstChild);
+
 	let div = document.createElement("div");
 	let divP = document.createElement("p");
 	divP.appendChild(document.createTextNode("Change table borders"));
@@ -159,6 +172,106 @@ function createDivTask5() {
 
 	}
 	div.appendChild(divButton);
+
+	let divTittle = document.createElement("div");
+	let divTittleP = document.createElement("p");
+	divTittleP.appendChild(document.createTextNode("Add Tittle"));
+	div.appendChild(divTittleP);
+
+	let tittle = document.createElement("input");
+	tittle.type = "text";
+	tittle.placeholder = "Insert tittle";
+	divTittle.appendChild(tittle);
+	div.appendChild(divTittle);
+
+	let divTittleButton = document.createElement("button");
+	divTittleButton.type = "button";
+	divTittleButton.innerText = "Add";
+	divTittleButton.style.marginLeft = "20px";
+	divTittleButton.onclick = () => {
+		headtable.innerText = tittle.value
+	}
+	divTittle.appendChild(divTittleButton);
+
+	div.appendChild(divTittle);
+
+	let divRemove = document.createElement("div");
+	let divRemoveP = document.createElement("p");
+	divRemoveP.appendChild(document.createTextNode("Delete row"));
+	divRemove.appendChild(divRemoveP);
+
+	let remove = document.createElement("input");
+	remove.type = "text";
+	remove.placeholder = "Insert row's number";
+	divRemove.appendChild(remove);
+
+	let divRemoveButton = document.createElement("button");
+	divRemoveButton.type = "button";
+	divRemoveButton.innerText = "Remove";
+	divRemoveButton.style.marginLeft = "20px";
+	divRemoveButton.onclick = () => {
+		if (remove.value > 0 && remove.value <= document.getElementsByTagName("tr").length)
+		{
+			document.getElementsByTagName("tr")[remove.value-1].remove();
+		}
+		else {
+			alert("Invalid number!");
+		}
+	}
+	divRemove.appendChild(divRemoveButton);
+	div.appendChild(divRemove);
+
+	let divRandom = document.createElement("div");
+	let divRandomP = document.createElement("p");
+	divRandomP.appendChild(document.createTextNode("Random Selection"));
+	divRandom.appendChild(divRandomP);
+
+	let magic = document.createElement("button");
+	magic.innerText = "Magic";
+	magic.style.marginTop = "3px";
+	magic.onclick = () => {
+		let tdList = document.querySelectorAll('td');
+		let idx = Math.floor(Math.random()*tdList.length);
+   		if (Math.floor(Math.random()*2) == 0){
+		    tdList[idx].style.backgroundColor = "rgb("+Math.floor(Math.random()*256)+", "+Math.floor(Math.random()*256)+", "+Math.floor(Math.random()*256)+")";
+		    tdList[idx].style.color = "rgb("+Math.floor(Math.random()*256)+", "+Math.floor(Math.random()*256)+", "+Math.floor(Math.random()*256)+")";
+		    tdList[idx].style.fontSize = Math.floor(Math.random()*10 + 15)+"px";
+		}
+		else {
+    		tdList[idx].removeChild(tdList[idx].lastChild);
+    		let size = Math.floor(Math.random()*6);
+    		let str = '';
+			let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    		for (let i = 0; i < size; i++){
+    			str += characters.charAt(Math.floor(Math.random() * characters.length));;
+    		}
+    		tdList[idx].appendChild(document.createTextNode(str));
+    	}
+	}
+	divRandom.appendChild(magic);
+	div.appendChild(divRandom);
+
+	let divDel = document.createElement("div");
+	let divDelP = document.createElement("p");
+	divDelP.appendChild(document.createTextNode("Delete"));
+	divDel.appendChild(divDelP);
+
+	let delButton = document.createElement("button");
+	delButton.innerText = "Delete table";
+	delButton.style.marginTop = "3px";
+	delButton.onclick = () => {
+		let tables = document.querySelectorAll("table");
+		tables.forEach((table)=>{
+			table.style.display = "none"
+		});
+		div.style.display = "none";
+		form.style.display = "block";
+		rows.value = "";
+		columns.value = "";
+	}
+	
+	divDel.appendChild(delButton);
+	div.appendChild(divDel);
 
 	document.body.append(div);
 }
