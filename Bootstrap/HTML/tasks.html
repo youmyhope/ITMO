@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Homework Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"=></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="lab5.css">
+	<script src="map.js"></script>
+	<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=INSERT_YOUR_MAP_API_KEY_HERE&sensor=false"></script>
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-light mb-4 purple">
+	  <a class="navbar-brand text-white" href="#">Bootstrap</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+	    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+	      class="navbar-toggler-icon"></span></button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link whiteText70" href="index.html">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle whiteText70" id="navbarDropdownMenuLink" data-toggle="dropdown"
+	          aria-haspopup="true" aria-expanded="false">Dropdown</a>
+	        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="dropdown-item" href="index.html">Table</a>
+	          <a class="dropdown-item" href="map.html">Map</a>
+	          <a class="dropdown-item" href="tasks.html">Tasks</a>
+            <a class="dropdown-item" href="contact.html">Contacts</a>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html"  class="greyText">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tasks</li>
+    </ol>
+  </nav>
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">&#8470;</th>
+      <th scope="col">Task's name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Blocks</td>
+      <td>Use HTML and CSS to make blocks.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/Block%20HTML">Visit my Github</a></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>CSS</td>
+      <td>Use HTML and CSS to make a page.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/CSS">Visit my Github</a></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>JavaScript</td>
+      <td>Use JavaScript make forms.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/Javascript/Task1">Visit my Github</a></td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>JavaScript</td>
+      <td>Use JavaScript make dynamic table.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/Javascript/Task2">Visit my Github</a></td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>JQuery</td>
+      <td>Use JQuery's animation.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/JQuery">Visit my Github</a></td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>Bootstrap</td>
+      <td>Use Bootstrap make a small website.</td>
+      <td><a href="https://github.com/youmyhope/ITMO/tree/master/Block%20HTML">Visit my Github</a></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+<footer class="page-footer font-small purple pt-4 text-white">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row">
+      <div class="col-md-6 mt-md-0 mt-3">
+        <h5 class="text-uppercase biggerFont">UNIVERSITY ITMO</h5>
+        <p>IT's MOre than a university!</p>
+      </div>
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Information</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>Luu Tran Thi Thien Huong</p>
+          </li>
+          <li>
+            <p>N3455</p>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-3 mb-md-0 mb-3">
+        <h5 class="text-uppercase">Contact</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://vk.com/thienhuong" class="whiteText70">VKontakte</p>
+          </li>          
+          <li>
+            <a href="https://www.facebook.com/lv.luu.7/" class="whiteText70">Facebook</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+</footer>
